@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace InterfaceExercise
 {
@@ -6,28 +7,37 @@ namespace InterfaceExercise
     {
         static void Main(string[] args)
         {
-            //TODO Be sure to follow BEST PRACTICES when creating classes and interfaces
+            //DONE - TODO Be sure to follow BEST PRACTICES when creating classes and interfaces
 
-            //Create 2 Interfaces called IVehicle & ICompany
+            //DONE - Create 2 Interfaces called IVehicle & ICompany
 
             //Create 3 classes called Car , Truck , & SUV
 
-            //In your IVehicle
-            
-                /* Create 4 members that Car, Truck, & SUV all have in common.
-                 * Example: All vehicles have a number of wheels... for now..
-                 */
-            
+            //DONE - In your IVehicle
+
+            /* Create 4 members that Car, Truck, & SUV all have in common.
+             * Example: All vehicles have a number of wheels... for now..
+             */
+
 
             //In ICompany
-            
-                /*Create 2 members that are specific to each every company
-                 * regardless of vehicle type.
-                 *
-                 *
-                 * Example: public string Logo { get; set; }
-                 */
 
+            //DONE - *Create 2 members that are specific to each every company
+            //regardless of vehicle type.
+
+
+            //Example: public string Logo { get; set; }
+
+            var myCar = new Car();
+            var myTruck = new Truck();
+            var newList = new List<IVehicle>();
+            newList.Add(myCar);
+            newList.Add(myTruck);
+            
+            foreach(var item in newList)
+            {
+                Console.WriteLine($"{item.GetType().Name} {item.EngineSize} {item.HasChangedGears} {item.Make} {item.Model}");
+            }
             //In each of your car, truck, and suv classes
 
                 /*Create 2 members that are specific to each class
